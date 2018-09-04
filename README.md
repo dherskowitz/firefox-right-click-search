@@ -6,7 +6,7 @@ A Firefox extension to search for selected text from the context menu using the 
 
 ## Compatability
 
-Requires Firefox > 63. Lower versions of Firefox may allow installation, however the extension will not be added to the context menu and will appear not to work. This is due to Firefox having added new features in their add-ons API with 63 as a minimum version.
+This add-on requires Firefox version 63 or later.
 
 ## License
 
