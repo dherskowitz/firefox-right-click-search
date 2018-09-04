@@ -10,6 +10,6 @@ Requires Firefox > 63. Lower versions of Firefox may allow installation, however
 
 ## License
 
-Copyright &#169;. All rights reserved.
+Copyright (c). All rights reserved.
 
 Licensed under the MIT/X11 License.
