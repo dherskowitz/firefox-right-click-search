@@ -1,4 +1,5 @@
 function retrieved(results) {
+    browser.contextMenus.removeAll()
     for (let searchEngine of results) {
         browser.contextMenus.create({
             id: searchEngine.name,
@@ -9,13 +10,8 @@ function retrieved(results) {
             }
         });
     }
+    browser.contextMenus.refresh();
 }
-
-browser.search.get().then(retrieved);
-
-browser.contextMenus.onClicked.addListener(function (info, tab) {
-    search(info.selectionText, info.menuItemId);
-})
 
 function search(query, engine) {
     browser.search.search({
@@ -23,3 +19,11 @@ function search(query, engine) {
         engine: engine
     });
 }
+
+browser.contextMenus.onClicked.addListener(function (info, tab) {
+    search(info.selectionText, info.menuItemId);
+})
+
+browser.contextMenus.onShown.addListener(function () {
+    browser.search.get().then(retrieved);
+})
